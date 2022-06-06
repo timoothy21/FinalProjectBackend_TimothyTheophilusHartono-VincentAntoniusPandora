@@ -17,16 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/showbarang', 'BarangController@showBarang');
+Route::get('/addbarang', 'BarangController@addBarang');
+Route::get('/edit/{id}', 'editController@edit');
+Route::post('/store', 'BarangController@store');
 
-Route::get('/katalog', function () {
-    return view('katalog');
-});
-
-
+Route::put('/update/{id}', 'editController@update');
+Route::get('/delete/{id}', 'editController@delete')->name('deletebarang');
