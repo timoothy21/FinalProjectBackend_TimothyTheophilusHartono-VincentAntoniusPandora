@@ -57,7 +57,7 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
             // return response()->json(['User have not permission for this page access.']);
-            return redirect('products.index');
+            return redirect('products');
         }
     
         return parent::render($request, $exception);
