@@ -17,14 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
+Auth::routes();
 
-Route::get('/showbarang', 'BarangController@showBarang');
-Route::get('/addbarang', 'BarangController@addBarang');
-Route::get('/edit/{id}', 'editController@edit');
-Route::post('/store', 'BarangController@store');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::put('/update/{id}', 'editController@update');
-Route::get('/delete/{id}', 'editController@delete')->name('deletebarang');
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles','RoleController');
+    Route::resource('users','UserController');
+    Route::resource('products','ProductController');
+});
