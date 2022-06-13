@@ -13,6 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -29,41 +35,36 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto"></ul>
 
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li>
+                            <a class="nav-link" href="{{ url('/') }}">
+                                Home
+                            </a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
-                            <!-- <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
-                            <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li> -->
                             <li><a class="nav-link" href="{{ route('products.index') }}">Product</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Manage<span class="caret"></span>
                                 </a>
-
-
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('users.index') }}">
                                        Manage Users
                                     </a>
                                     <a class="dropdown-item" href="{{ route('roles.index') }}">
-                                    Manage Role
+                                        Manage Role
                                     </a>
-                                    <!-- <a class="dropdown-item" href="{{ route('products.index') }}">
-                                    Manage Product
-                                    </a> -->
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
-
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

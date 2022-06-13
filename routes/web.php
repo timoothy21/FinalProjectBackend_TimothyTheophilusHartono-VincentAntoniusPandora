@@ -26,3 +26,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users','UserController');
     Route::resource('products','ProductController');
 });
+
+// Route::get('/bill', 'ReceiptController@index')->name('Bill');
+
+Route::get('/billReceipt', 'ReceiptController@index')->name('bill');
+Route::get('/getPrice/{id}', 'ReceiptController@getPrice');
+
+// Route::get('/billReciept','RecieptController@index');
+// Route::get('/getPrice/{id}', 'RecieptController@getPrice');
