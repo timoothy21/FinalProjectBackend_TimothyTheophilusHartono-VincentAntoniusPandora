@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://cdn.discordapp.com/attachments/903639181111222283/985891909702664232/unknown.png" alt="License"></a>
